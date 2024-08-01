@@ -58,12 +58,23 @@ const Lvls3 = ({navigation, route}) => {
   const [thirdCompl, setThirdCompl] = useState(false);
 
   useEffect(() => {
+    if (currentQuestionIndex === 10) {
+      setThirdCompl(true);
+    }
+  }, [currentQuestionIndex]);
+
+  useEffect(() => {
     getData();
+    getDataLvls3();
   }, []);
 
   useEffect(() => {
     setData();
   }, [lives, hints]);
+
+  useEffect(() => {
+    setDataLvls3();
+  }, [thirdCompl]);
 
   useEffect(() => {
     if (currentQuestionIndex < 10) {
@@ -77,6 +88,32 @@ const Lvls3 = ({navigation, route}) => {
       setUsedHintsForCurrentQuestion(false);
     }
   }, [currentQuestionIndex]);
+
+  const setDataLvls3 = async () => {
+    try {
+      const data = {
+        thirdCompl,
+      };
+
+      const jsonData = JSON.stringify(data);
+      await AsyncStorage.setItem(`Lvls3`, jsonData);
+      console.log('Дані збережено в AsyncStorage');
+    } catch (e) {
+      console.log('Помилка збереження даних:', e);
+    }
+  };
+  const getDataLvls3 = async () => {
+    try {
+      const jsonData = await AsyncStorage.getItem(`Lvls3`);
+      if (jsonData !== null) {
+        const parsedData = JSON.parse(jsonData);
+        console.log('parsedData==>', parsedData);
+        setThirdCompl(parsedData.thirdCompl);
+      }
+    } catch (e) {
+      console.log('Помилка отримання даних:', e);
+    }
+  };
 
   const setData = async () => {
     try {

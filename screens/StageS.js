@@ -26,6 +26,8 @@ const StageS = ({navigation}) => {
 
   useEffect(() => {
     getDataLvls1();
+    getDataLvls2();
+    getDataLvls3();
   }, []);
 
   const getDataLvls1 = async () => {
@@ -35,6 +37,30 @@ const StageS = ({navigation}) => {
         const parsedData = JSON.parse(jsonData);
         console.log('parsedData==>', parsedData);
         setFirstCompl(parsedData.firstCompl);
+      }
+    } catch (e) {
+      console.log('Помилка отримання даних:', e);
+    }
+  };
+  const getDataLvls2 = async () => {
+    try {
+      const jsonData = await AsyncStorage.getItem(`Lvls2`);
+      if (jsonData !== null) {
+        const parsedData = JSON.parse(jsonData);
+        console.log('parsedData==>', parsedData);
+        setSecondCompl(parsedData.secondCompl);
+      }
+    } catch (e) {
+      console.log('Помилка отримання даних:', e);
+    }
+  };
+  const getDataLvls3 = async () => {
+    try {
+      const jsonData = await AsyncStorage.getItem(`Lvls3`);
+      if (jsonData !== null) {
+        const parsedData = JSON.parse(jsonData);
+        console.log('parsedData==>', parsedData);
+        setThirdCompl(parsedData.thirdCompl);
       }
     } catch (e) {
       console.log('Помилка отримання даних:', e);
