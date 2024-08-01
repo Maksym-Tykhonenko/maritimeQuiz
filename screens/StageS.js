@@ -9,12 +9,38 @@ import {
   Modal,
 } from 'react-native';
 import {Dimensions} from 'react-native';
-import ConfettiCannon from 'react-native-confetti-cannon';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const windowWidth = Dimensions.get('window').width;
 
 const StageS = ({navigation}) => {
+  const [firstCompl, setFirstCompl] = useState(false);
+  const [secondCompl, setSecondCompl] = useState(false);
+  const [thirdCompl, setThirdCompl] = useState(false);
+  const [fourthCompl, setFourthCompl] = useState(false);
+  const [fifthCompl, setFifthCompl] = useState(false);
+  const [sixthCompl, setSixthCompl] = useState(false);
+  const [seventhCompl, setSeventhCompl] = useState(false);
+  const [eighthCompl, setEighthCompl] = useState(false);
+  const [ninethCompl, setNinthCompl] = useState(false);
+
+  useEffect(() => {
+    getDataLvls1();
+  }, []);
+
+  const getDataLvls1 = async () => {
+    try {
+      const jsonData = await AsyncStorage.getItem(`Lvls1`);
+      if (jsonData !== null) {
+        const parsedData = JSON.parse(jsonData);
+        console.log('parsedData==>', parsedData);
+        setFirstCompl(parsedData.firstCompl);
+      }
+    } catch (e) {
+      console.log('Помилка отримання даних:', e);
+    }
+  };
+
   return (
     <View
       style={{
@@ -49,16 +75,17 @@ const StageS = ({navigation}) => {
                 textAlign: 'center',
                 fontWeight: 'bold',
               }}>
-              1 History of the Port of Ostend
+              History of the Port of Ostend
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
+            disabled={firstCompl ? false : true}
             style={{
               width: windowWidth * 0.9,
               height: 80,
               borderWidth: 3,
-              borderColor: '#ff6a02',
+              borderColor: firstCompl ? '#ff6a02' : 'gray',
               borderRadius: 50,
               alignItems: 'center',
               justifyContent: 'center',
@@ -71,21 +98,22 @@ const StageS = ({navigation}) => {
             }}>
             <Text
               style={{
-                color: '#ff6a02',
+                color: firstCompl ? '#ff6a02' : 'gray',
                 fontSize: 20,
                 textAlign: 'center',
                 fontWeight: 'bold',
               }}>
-              2 Famous Sailors of Ostend
+              Famous Sailors of Ostend
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
+            disabled={secondCompl ? false : true}
             style={{
               width: windowWidth * 0.9,
               height: 80,
               borderWidth: 3,
-              borderColor: '#ff6a02',
+              borderColor: secondCompl ? '#ff6a02' : 'grey',
               borderRadius: 50,
               alignItems: 'center',
               justifyContent: 'center',
@@ -98,21 +126,22 @@ const StageS = ({navigation}) => {
             }}>
             <Text
               style={{
-                color: '#ff6a02',
+                color: secondCompl ? '#ff6a02' : 'grey',
                 fontSize: 20,
                 textAlign: 'center',
                 fontWeight: 'bold',
               }}>
-              3: Naval Battles and Skirmishes near Ostend
+              Naval Battles and Skirmishes near Ostend
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
+            disabled={thirdCompl ? false : true}
             style={{
               width: windowWidth * 0.9,
               height: 80,
               borderWidth: 3,
-              borderColor: '#ff6a02',
+              borderColor: thirdCompl ? '#ff6a02' : 'grey',
               borderRadius: 50,
               alignItems: 'center',
               justifyContent: 'center',
@@ -125,21 +154,22 @@ const StageS = ({navigation}) => {
             }}>
             <Text
               style={{
-                color: '#ff6a02',
+                color: thirdCompl ? '#ff6a02' : 'grey',
                 fontSize: 20,
                 textAlign: 'center',
                 fontWeight: 'bold',
               }}>
-              4: Maritime Trade of Ostend
+              Maritime Trade of Ostend
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
+            disabled={fourthCompl ? false : true}
             style={{
               width: windowWidth * 0.9,
               height: 80,
               borderWidth: 3,
-              borderColor: '#ff6a02',
+              borderColor: fourthCompl ? '#ff6a02' : 'grey',
               borderRadius: 50,
               alignItems: 'center',
               justifyContent: 'center',
@@ -152,21 +182,22 @@ const StageS = ({navigation}) => {
             }}>
             <Text
               style={{
-                color: '#ff6a02',
+                color: fourthCompl ? '#ff6a02' : 'grey',
                 fontSize: 20,
                 textAlign: 'center',
                 fontWeight: 'bold',
               }}>
-              5: Maritime Legends and Myths of Ostend
+              Maritime Legends and Myths of Ostend
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
+            disabled={fifthCompl ? false : true}
             style={{
               width: windowWidth * 0.9,
               height: 80,
               borderWidth: 3,
-              borderColor: '#ff6a02',
+              borderColor: fifthCompl ? '#ff6a02' : 'grey',
               borderRadius: 50,
               alignItems: 'center',
               justifyContent: 'center',
@@ -179,21 +210,22 @@ const StageS = ({navigation}) => {
             }}>
             <Text
               style={{
-                color: '#ff6a02',
+                color: fifthCompl ? '#ff6a02' : 'grey',
                 fontSize: 20,
                 textAlign: 'center',
                 fontWeight: 'bold',
               }}>
-              6: Maritime Architecture of Ostend
+              Maritime Architecture of Ostend
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
+            disabled={sixthCompl ? false : true}
             style={{
               width: windowWidth * 0.9,
               height: 80,
               borderWidth: 3,
-              borderColor: '#ff6a02',
+              borderColor: sixthCompl ? '#ff6a02' : 'grey',
               borderRadius: 50,
               alignItems: 'center',
               justifyContent: 'center',
@@ -206,21 +238,22 @@ const StageS = ({navigation}) => {
             }}>
             <Text
               style={{
-                color: '#ff6a02',
+                color: sixthCompl ? '#ff6a02' : 'grey',
                 fontSize: 20,
                 textAlign: 'center',
                 fontWeight: 'bold',
               }}>
-              7: Fishing and Marine Trades of Ostend
+              Fishing and Marine Trades of Ostend
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
+            disabled={seventhCompl ? false : true}
             style={{
               width: windowWidth * 0.9,
               height: 80,
               borderWidth: 3,
-              borderColor: '#ff6a02',
+              borderColor: seventhCompl ? '#ff6a02' : 'grey',
               borderRadius: 50,
               alignItems: 'center',
               justifyContent: 'center',
@@ -233,21 +266,22 @@ const StageS = ({navigation}) => {
             }}>
             <Text
               style={{
-                color: '#ff6a02',
+                color: seventhCompl ? '#ff6a02' : 'grey',
                 fontSize: 20,
                 textAlign: 'center',
                 fontWeight: 'bold',
               }}>
-              8: Maritime Infrastructure of Ostend
+              Maritime Infrastructure of Ostend
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
+            disabled={eighthCompl ? false : true}
             style={{
               width: windowWidth * 0.9,
               height: 80,
               borderWidth: 3,
-              borderColor: '#ff6a02',
+              borderColor: eighthCompl ? '#ff6a02' : 'grey',
               borderRadius: 50,
               alignItems: 'center',
               justifyContent: 'center',
@@ -260,21 +294,22 @@ const StageS = ({navigation}) => {
             }}>
             <Text
               style={{
-                color: '#ff6a02',
+                color: eighthCompl ? '#ff6a02' : 'grey',
                 fontSize: 20,
                 textAlign: 'center',
                 fontWeight: 'bold',
               }}>
-              9: Maritime Traditions and Festivals of Ostend
+              Maritime Traditions and Festivals of Ostend
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
+            disabled={ninethCompl ? false : true}
             style={{
               width: windowWidth * 0.9,
               height: 80,
               borderWidth: 3,
-              borderColor: '#ff6a02',
+              borderColor: ninethCompl ? '#ff6a02' : 'grey',
               borderRadius: 50,
               alignItems: 'center',
               justifyContent: 'center',
@@ -287,12 +322,12 @@ const StageS = ({navigation}) => {
             }}>
             <Text
               style={{
-                color: '#ff6a02',
+                color: ninethCompl ? '#ff6a02' : 'grey',
                 fontSize: 20,
                 textAlign: 'center',
                 fontWeight: 'bold',
               }}>
-              10: Modern Maritime Activities in Ostend
+              Modern Maritime Activities in Ostend
             </Text>
           </TouchableOpacity>
           <View style={{height: 100}}></View>

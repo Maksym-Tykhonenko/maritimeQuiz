@@ -98,6 +98,7 @@ const ResultScreen = ({navigation}) => {
       }}>
       <Text
         style={{
+          fontFamily: 'Starnberg',
           color: '#ff6a02',
           fontSize: 70,
           fontWeight: 'bold',
@@ -113,6 +114,7 @@ const ResultScreen = ({navigation}) => {
         />
         <Text
           style={{
+            fontFamily: 'Starnberg',
             color: '#ff6a02',
             fontSize: 50,
             marginTop: 10,
@@ -122,6 +124,7 @@ const ResultScreen = ({navigation}) => {
         </Text>
         <Text
           style={{
+            fontFamily: 'Starnberg',
             color: '#ff6a02',
             fontSize: 50,
             marginTop: 10,

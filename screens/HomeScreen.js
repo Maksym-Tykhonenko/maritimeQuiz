@@ -31,7 +31,12 @@ const HomeScreen = ({navigation}) => {
                 marginTop: 20,
               }}>
               <Text
-                style={{color: '#ff6a02', fontSize: 40, fontWeight: 'bold'}}>
+                style={{
+                  color: '#ff6a02',
+                  fontSize: 40,
+                  fontWeight: 'bold',
+                  fontFamily: 'Starnberg',
+                }}>
                 Start
               </Text>
             </TouchableOpacity>
@@ -51,7 +56,12 @@ const HomeScreen = ({navigation}) => {
                 marginBottom: 20,
               }}>
               <Text
-                style={{color: '#ff6a02', fontSize: 40, fontWeight: 'bold'}}>
+                style={{
+                  color: '#ff6a02',
+                  fontSize: 40,
+                  fontWeight: 'bold',
+                  fontFamily: 'Starnberg',
+                }}>
                 Shop
               </Text>
             </TouchableOpacity>
@@ -71,7 +81,12 @@ const HomeScreen = ({navigation}) => {
                 marginBottom: 20,
               }}>
               <Text
-                style={{color: '#ff6a02', fontSize: 40, fontWeight: 'bold'}}>
+                style={{
+                  color: '#ff6a02',
+                  fontSize: 40,
+                  fontWeight: 'bold',
+                  fontFamily: 'Starnberg',
+                }}>
                 Profile
               </Text>
             </TouchableOpacity>
@@ -90,7 +105,12 @@ const HomeScreen = ({navigation}) => {
                 justifyContent: 'center',
               }}>
               <Text
-                style={{color: '#ff6a02', fontSize: 40, fontWeight: 'bold'}}>
+                style={{
+                  color: '#ff6a02',
+                  fontSize: 40,
+                  fontWeight: 'bold',
+                  fontFamily: 'Starnberg',
+                }}>
                 About
               </Text>
             </TouchableOpacity>

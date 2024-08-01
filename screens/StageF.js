@@ -21,7 +21,7 @@ const StageF = ({navigation}) => {
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
   console.log('correctAnswersCount==>', correctAnswersCount);
   const [incorrectAttempts, setIncorrectAttempts] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(1200);
+  const [timeLeft, setTimeLeft] = useState(120);
   const [luserModal, setLuserModal] = useState(false);
   const [incorrectAnswerModal, setIncorrectAnswerModal] = useState(false);
   const [congratModal, setCongratModal] = useState(false);

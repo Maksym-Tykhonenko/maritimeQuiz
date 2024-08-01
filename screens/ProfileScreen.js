@@ -28,58 +28,60 @@ const ProfileScreen = ({navigation}) => {
   const [hints, setHints] = useState(3); // початкова кількість підказок
   console.log('hints==>', hints);
 
-  useEffect(() => {
-    getData();
-    getProfileData();
-  }, []);
-
-  useEffect(() => {
-    setData();
-  }, [name, selectAvatar]);
-
-  const setData = async () => {
-    try {
-      const data = {
-        name,
-        selectAvatar,
-      };
-
-      const jsonData = JSON.stringify(data);
-      await AsyncStorage.setItem(`ProfileScreen`, jsonData);
-      console.log('Дані збережено в AsyncStorage');
-    } catch (e) {
-      console.log('Помилка збереження даних:', e);
-    }
-  };
-
-  const getProfileData = async () => {
-    try {
-      const jsonData = await AsyncStorage.getItem(`ProfileScreen`);
-      if (jsonData !== null) {
-        const parsedData = JSON.parse(jsonData);
-        console.log('parsedData==>', parsedData);
-        setName(parsedData.name);
-        setSelectAvatar(parsedData.selectAvatar);
-      }
-    } catch (e) {
-      console.log('Помилка отримання даних:', e);
-    }
-  };
-
-  const getData = async () => {
-    try {
-      const jsonData = await AsyncStorage.getItem(`correctAnswers`);
-      if (jsonData !== null) {
-        const parsedData = JSON.parse(jsonData);
-        console.log('parsedData==>', parsedData);
-        setCorrectAnswersCount(parsedData.correctAnswersCount);
-        setLives(parsedData.lives ?? 3);
-        setHints(parsedData.hints ?? 3);
-      }
-    } catch (e) {
-      console.log('Помилка отримання даних:', e);
-    }
-  };
+  //useEffect(() => {
+  //  getData();
+  //  //getProfileData();
+  //}, []);
+  //
+  //useEffect(() => {
+  //  setData();
+  //}, [name, selectAvatar]);
+  //
+  //const setData = async () => {
+  //  try {
+  //    const data = {
+  //      name,
+  //      selectAvatar,
+  //    };
+  //
+  //    const jsonData = JSON.stringify(data);
+  //    await AsyncStorage.setItem(`ProfileScreen`, jsonData);
+  //    console.log('Дані збережено в AsyncStorage');
+  //  } catch (e) {
+  //    console.log('Помилка збереження даних:', e);
+  //  }
+  //};
+  //
+  //const getProfileData = async () => {
+  //  try {
+  //    const jsonData = await AsyncStorage.getItem(`ProfileScreen`);
+  //    if (jsonData !== null) {
+  //      const parsedData = JSON.parse(jsonData);
+  //      console.log('parsedData==>', parsedData);
+  //      setName(parsedData.name);
+  //      setSelectAvatar(parsedData.selectAvatar);
+  //    }
+  //  } catch (e) {
+  //    console.log('Помилка отримання даних:', e);
+  //  }
+  //};
+  //
+  //const getData = async () => {
+  //  try {
+  //    const jsonData = await AsyncStorage.getItem(`correctAnswers`);
+  //    if (jsonData !== null) {
+  //      const parsedData = JSON.parse(jsonData);
+  //      console.log('parsedData==>', parsedData);
+  //      setCorrectAnswersCount(parsedData.correctAnswersCount);
+  //      setLives(parsedData.lives ?? 3);
+  //      setHints(parsedData.hints ?? 3);
+  //      setName(parsedData.name);
+  //      setSelectAvatar(parsedData.selectAvatar);
+  //    }
+  //  } catch (e) {
+  //    console.log('Помилка отримання даних:', e);
+  //  }
+  //};
 
   const AvatarPicer = () => {
     let options = {

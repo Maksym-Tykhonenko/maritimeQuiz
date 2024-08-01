@@ -30,7 +30,12 @@ const StartScreen = ({navigation}) => {
           marginBottom: 20,
           marginTop: 20,
         }}>
-        <Text style={{color: '#ff6a02', fontSize: 40, fontWeight: 'bold'}}>
+        <Text
+          style={{
+            color: '#ff6a02',
+            fontSize: 40,
+            fontWeight: 'bold',
+          }}>
           STAGE 1
         </Text>
       </TouchableOpacity>
@@ -49,7 +54,12 @@ const StartScreen = ({navigation}) => {
           justifyContent: 'center',
           marginBottom: 20,
         }}>
-        <Text style={{color: '#ff6a02', fontSize: 40, fontWeight: 'bold'}}>
+        <Text
+          style={{
+            color: '#ff6a02',
+            fontSize: 40,
+            fontWeight: 'bold',
+          }}>
           STAGE 2
         </Text>
       </TouchableOpacity>

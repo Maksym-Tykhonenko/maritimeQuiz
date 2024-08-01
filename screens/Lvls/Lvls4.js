@@ -55,6 +55,7 @@ const Lvls4 = ({navigation, route}) => {
   const [noHintsModal, setNoHintsModal] = useState(false);
   const [incorrectAnswerModal, setIncorrectAnswerModal] = useState(false);
   const [gameOverModal, setGameOverModal] = useState(false);
+  const [fourthCompl, setFourthCompl] = useState(false);
 
   useEffect(() => {
     getData();

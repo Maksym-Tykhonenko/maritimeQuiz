@@ -43,7 +43,7 @@ const getNextScreenName = routeName => {
 
 const Lvls1 = ({navigation, route}) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  console.log('currentQuestionIndex==>', currentQuestionIndex);
+  //console.log('currentQuestionIndex==>', currentQuestionIndex);
   const [userAnswer, setUserAnswer] = useState('');
   const [isCorrect, setIsCorrect] = useState(null);
   const [lives, setLives] = useState(3);
@@ -55,14 +55,27 @@ const Lvls1 = ({navigation, route}) => {
   const [noHintsModal, setNoHintsModal] = useState(false);
   const [incorrectAnswerModal, setIncorrectAnswerModal] = useState(false);
   const [gameOverModal, setGameOverModal] = useState(false);
+  const [firstCompl, setFirstCompl] = useState(false);
+  console.log('firstCompl==>', firstCompl);
+
+  useEffect(() => {
+    if (currentQuestionIndex === 10) {
+      setFirstCompl(true);
+    }
+  }, [currentQuestionIndex]);
 
   useEffect(() => {
     getData();
+    getDataLvls1();
   }, []);
 
   useEffect(() => {
     setData();
   }, [lives, hints]);
+
+  useEffect(() => {
+    setDataLvls1();
+  }, [firstCompl]);
 
   useEffect(() => {
     if (currentQuestionIndex < 10) {
@@ -93,7 +106,6 @@ const Lvls1 = ({navigation, route}) => {
   };
 
   const getData = async () => {
-    console.log('dddd');
     try {
       const jsonData = await AsyncStorage.getItem(`correctAnswers`);
       if (jsonData !== null) {
@@ -101,6 +113,32 @@ const Lvls1 = ({navigation, route}) => {
         console.log('parsedData==>', parsedData);
         setLives(parsedData.lives >= 3 ? parsedData.lives : 3);
         setHints(parsedData.hints >= 3 ? parsedData.hints : 3);
+      }
+    } catch (e) {
+      console.log('Помилка отримання даних:', e);
+    }
+  };
+
+  const setDataLvls1 = async () => {
+    try {
+      const data = {
+        firstCompl,
+      };
+
+      const jsonData = JSON.stringify(data);
+      await AsyncStorage.setItem(`Lvls1`, jsonData);
+      console.log('Дані збережено в AsyncStorage');
+    } catch (e) {
+      console.log('Помилка збереження даних:', e);
+    }
+  };
+  const getDataLvls1 = async () => {
+    try {
+      const jsonData = await AsyncStorage.getItem(`Lvls1`);
+      if (jsonData !== null) {
+        const parsedData = JSON.parse(jsonData);
+        console.log('parsedData==>', parsedData);
+        setFirstCompl(parsedData.firstCompl);
       }
     } catch (e) {
       console.log('Помилка отримання даних:', e);

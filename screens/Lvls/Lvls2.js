@@ -55,6 +55,13 @@ const Lvls1 = ({navigation, route}) => {
   const [noHintsModal, setNoHintsModal] = useState(false);
   const [incorrectAnswerModal, setIncorrectAnswerModal] = useState(false);
   const [gameOverModal, setGameOverModal] = useState(false);
+  const [secondCompl, setSecondCompl] = useState(false);
+
+  useEffect(() => {
+    if (currentQuestionIndex === 10) {
+      setSecondCompl(true);
+    }
+  }, [currentQuestionIndex]);
 
   useEffect(() => {
     getData();
@@ -62,7 +69,12 @@ const Lvls1 = ({navigation, route}) => {
 
   useEffect(() => {
     setData();
+    getDataLvls2();
   }, [lives, hints]);
+
+  useEffect(() => {
+    setDataLvls2();
+  }, [secondCompl]);
 
   useEffect(() => {
     if (currentQuestionIndex < 10) {
@@ -101,6 +113,32 @@ const Lvls1 = ({navigation, route}) => {
         console.log('parsedData==>', parsedData);
         setLives(parsedData.lives >= 3 ? parsedData.lives : 3);
         setHints(parsedData.hints >= 3 ? parsedData.hints : 3);
+      }
+    } catch (e) {
+      console.log('Помилка отримання даних:', e);
+    }
+  };
+
+  const setDataLvls2 = async () => {
+    try {
+      const data = {
+        secondCompl,
+      };
+
+      const jsonData = JSON.stringify(data);
+      await AsyncStorage.setItem(`Lvls2`, jsonData);
+      console.log('Дані збережено в AsyncStorage');
+    } catch (e) {
+      console.log('Помилка збереження даних:', e);
+    }
+  };
+  const getDataLvls2 = async () => {
+    try {
+      const jsonData = await AsyncStorage.getItem(`Lvls2`);
+      if (jsonData !== null) {
+        const parsedData = JSON.parse(jsonData);
+        console.log('parsedData==>', parsedData);
+        setSecondCompl(parsedData.secondCompl);
       }
     } catch (e) {
       console.log('Помилка отримання даних:', e);
