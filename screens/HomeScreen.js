@@ -57,6 +57,9 @@ const HomeScreen = ({navigation}) => {
             </TouchableOpacity>
 
             <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('ProfileScreen');
+              }}
               style={{
                 width: 250,
                 height: 80,
@@ -69,11 +72,14 @@ const HomeScreen = ({navigation}) => {
               }}>
               <Text
                 style={{color: '#ff6a02', fontSize: 40, fontWeight: 'bold'}}>
-                PROFILE
+                Profile
               </Text>
             </TouchableOpacity>
 
             <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('AbouteScreem');
+              }}
               style={{
                 width: 250,
                 height: 80,
@@ -85,7 +91,7 @@ const HomeScreen = ({navigation}) => {
               }}>
               <Text
                 style={{color: '#ff6a02', fontSize: 40, fontWeight: 'bold'}}>
-                ABOUT
+                About
               </Text>
             </TouchableOpacity>
           </View>

@@ -11,7 +11,7 @@ import {
 import {Dimensions} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import {topick2} from '../../data/topick2';
+import {topick8} from '../../data/topick8';
 import {history} from '../../data/history';
 
 const windowWidth = Dimensions.get('window').width;
@@ -41,7 +41,7 @@ const getNextScreenName = routeName => {
   }
 };
 
-const Lvls1 = ({navigation, route}) => {
+const Lvls8 = ({navigation, route}) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   console.log('currentQuestionIndex==>', currentQuestionIndex);
   const [userAnswer, setUserAnswer] = useState('');
@@ -51,7 +51,7 @@ const Lvls1 = ({navigation, route}) => {
   const [options, setOptions] = useState([]);
   const [usedHintsForCurrentQuestion, setUsedHintsForCurrentQuestion] =
     useState(false);
-  //console.log('topick2ength==>', topick2.length);
+  //console.log('topickLength==>', topick8.length);
   const [noHintsModal, setNoHintsModal] = useState(false);
   const [incorrectAnswerModal, setIncorrectAnswerModal] = useState(false);
   const [gameOverModal, setGameOverModal] = useState(false);
@@ -66,7 +66,7 @@ const Lvls1 = ({navigation, route}) => {
 
   useEffect(() => {
     if (currentQuestionIndex < 10) {
-      const currentQuestion = topick2[currentQuestionIndex];
+      const currentQuestion = topick8[currentQuestionIndex];
       setOptions(
         Object.entries(currentQuestion.options).map(([key, value]) => ({
           key,
@@ -108,7 +108,7 @@ const Lvls1 = ({navigation, route}) => {
   };
 
   const handleAnswer = optionValue => {
-    const currentQuestion = topick2[currentQuestionIndex];
+    const currentQuestion = topick8[currentQuestionIndex];
     if (optionValue === currentQuestion.answer) {
       setIsCorrect(true);
       setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -129,7 +129,7 @@ const Lvls1 = ({navigation, route}) => {
 
   const handleHintPress = () => {
     if (hints > 0 && !usedHintsForCurrentQuestion) {
-      const currentQuestion = topick2[currentQuestionIndex];
+      const currentQuestion = topick8[currentQuestionIndex];
       const incorrectOptions = Object.entries(currentQuestion.options).filter(
         ([key, value]) => value !== currentQuestion.answer,
       );
@@ -155,7 +155,7 @@ const Lvls1 = ({navigation, route}) => {
     }
   };
 
-  const currentQuestion = topick2[currentQuestionIndex];
+  const currentQuestion = topick8[currentQuestionIndex];
 
   return (
     <View
@@ -166,7 +166,7 @@ const Lvls1 = ({navigation, route}) => {
         backgroundColor: '#29516b',
         paddingTop: 50,
       }}>
-      {currentQuestionIndex >= topick2.length ? (
+      {currentQuestionIndex >= topick8.length ? (
         <View
           style={{
             flex: 1,
@@ -204,7 +204,7 @@ const Lvls1 = ({navigation, route}) => {
                   color: '#ff6a02',
                   textAlign: 'center',
                 }}>
-                {history[1]}
+                {history[7]}
               </Text>
 
               <TouchableOpacity
@@ -287,7 +287,7 @@ const Lvls1 = ({navigation, route}) => {
           {/**Content */}
           <ScrollView>
             <Image
-              source={require('../../assets/Stage2/T2.png')}
+              source={require('../../assets/Stage2/T8.png')}
               style={{width: windowWidth, height: 245}}
             />
 
@@ -608,4 +608,4 @@ const Lvls1 = ({navigation, route}) => {
   );
 };
 
-export default Lvls1;
+export default Lvls8;

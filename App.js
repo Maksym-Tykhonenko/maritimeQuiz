@@ -19,6 +19,8 @@ import Lvls7 from './screens/Lvls/Lvls7';
 import Lvls8 from './screens/Lvls/Lvls8';
 import Lvls9 from './screens/Lvls/Lvls9';
 import Lvls10 from './screens/Lvls/Lvls10';
+import ProfileScreen from './screens/ProfileScreen';
+import AbouteScreem from './screens/AboutScreen';
 
 const App = () => {
   return (
@@ -97,6 +99,16 @@ const App = () => {
         <Stack.Screen
           name="Lvls10"
           component={Lvls10}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ProfileScreen"
+          component={ProfileScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="AbouteScreem"
+          component={AbouteScreem}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

@@ -94,7 +94,7 @@ const StageS = ({navigation}) => {
               paddingHorizontal: 10,
             }}
             onPress={() => {
-              //navigation.navigate('Lvls1');
+              navigation.navigate('Lvls3');
             }}>
             <Text
               style={{
@@ -121,7 +121,7 @@ const StageS = ({navigation}) => {
               paddingHorizontal: 10,
             }}
             onPress={() => {
-              //navigation.navigate('Lvls1');
+              navigation.navigate('Lvls4');
             }}>
             <Text
               style={{
@@ -148,7 +148,7 @@ const StageS = ({navigation}) => {
               paddingHorizontal: 10,
             }}
             onPress={() => {
-              //navigation.navigate('Lvls1');
+              navigation.navigate('Lvls5');
             }}>
             <Text
               style={{
@@ -175,7 +175,7 @@ const StageS = ({navigation}) => {
               paddingHorizontal: 10,
             }}
             onPress={() => {
-              //navigation.navigate('Lvls1');
+              navigation.navigate('Lvls6');
             }}>
             <Text
               style={{
@@ -202,7 +202,7 @@ const StageS = ({navigation}) => {
               paddingHorizontal: 10,
             }}
             onPress={() => {
-              //navigation.navigate('Lvls1');
+              navigation.navigate('Lvls7');
             }}>
             <Text
               style={{
@@ -229,7 +229,7 @@ const StageS = ({navigation}) => {
               paddingHorizontal: 10,
             }}
             onPress={() => {
-              //navigation.navigate('Lvls1');
+              navigation.navigate('Lvls8');
             }}>
             <Text
               style={{
@@ -256,7 +256,7 @@ const StageS = ({navigation}) => {
               paddingHorizontal: 10,
             }}
             onPress={() => {
-              //navigation.navigate('Lvls1');
+              navigation.navigate('Lvls9');
             }}>
             <Text
               style={{
@@ -283,7 +283,7 @@ const StageS = ({navigation}) => {
               paddingHorizontal: 10,
             }}
             onPress={() => {
-              //navigation.navigate('Lvls1');
+              navigation.navigate('Lvls10');
             }}>
             <Text
               style={{

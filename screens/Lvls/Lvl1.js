@@ -204,7 +204,7 @@ const Lvls1 = ({navigation, route}) => {
                   color: '#ff6a02',
                   textAlign: 'center',
                 }}>
-                {history[1]}
+                {history[0]}
               </Text>
 
               <TouchableOpacity

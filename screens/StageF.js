@@ -569,7 +569,7 @@ const StageF = ({navigation}) => {
                 textAlign: 'center',
                 marginBottom: 20,
               }}>
-              with {(correctAnswersCount + 1) / 2} correct answers.
+              with {Math.round((correctAnswersCount + 1) / 2)} correct answers.
             </Text>
 
             <TouchableOpacity
