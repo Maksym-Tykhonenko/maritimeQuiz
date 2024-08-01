@@ -11,6 +11,14 @@ import ResultScreen from './screens/ResultScreen';
 import Lvls1 from './screens/Lvls/Lvl1';
 import StageS from './screens/StageS';
 import Lvls2 from './screens/Lvls/Lvls2';
+import Lvls3 from './screens/Lvls/Lvls3';
+import Lvls4 from './screens/Lvls/Lvls4';
+import Lvls5 from './screens/Lvls/Lvls5';
+import Lvls6 from './screens/Lvls/Lvls6';
+import Lvls7 from './screens/Lvls/Lvls7';
+import Lvls8 from './screens/Lvls/Lvls8';
+import Lvls9 from './screens/Lvls/Lvls9';
+import Lvls10 from './screens/Lvls/Lvls10';
 
 const App = () => {
   return (
@@ -49,6 +57,46 @@ const App = () => {
         <Stack.Screen
           name="Lvls2"
           component={Lvls2}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Lvls3"
+          component={Lvls3}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Lvls4"
+          component={Lvls4}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Lvls5"
+          component={Lvls5}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Lvls6"
+          component={Lvls6}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Lvls7"
+          component={Lvls7}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Lvls8"
+          component={Lvls8}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Lvls9"
+          component={Lvls9}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Lvls10"
+          component={Lvls10}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
